@@ -10,6 +10,10 @@
         android:icon="@drawable/ic_dashboard"
         android:title="Drivers" />
     <item
+        android:id="@+id/usersFragment"
+        android:icon="@drawable/ic_dashboard"
+        android:title="Drivers" />
+    <item
         android:id="@+id/settingFragment"
         android:icon="@drawable/ic_dashboard"
         android:title="Setting" />

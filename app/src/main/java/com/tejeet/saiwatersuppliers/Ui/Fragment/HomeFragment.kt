@@ -1,16 +1,16 @@
-package com.tejeet.saiwatersuppliers
+package com.tejeet.saiwatersuppliers.Ui.Fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.tejeet.saiwatersuppliers.databinding.FragmentHomeBinding
 import com.tejeet.saiwatersuppliers.databinding.FragmentProfileBinding
 
-class ProfileFragment : Fragment() {
+class HomeFragment : Fragment() {
 
-
-    private var _binding: FragmentProfileBinding? = null
+    private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,7 +18,7 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-         _binding = FragmentProfileBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -27,6 +27,5 @@ class ProfileFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 
 }
