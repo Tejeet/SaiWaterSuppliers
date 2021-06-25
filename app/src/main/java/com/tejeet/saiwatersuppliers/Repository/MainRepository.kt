@@ -23,7 +23,7 @@ class MainRepository @Inject constructor(
    ): Response<AddUserResponseDTO> {
 
       return  apiService.addUser("Ok",API_KEY,societyName,customerName,
-      customerEmail,customerMobile,customerAddress,tankerRate,adminName)
+      customerEmail,customerMobile,customerAddress,tankerRate,"123456",adminName)
    }
 
 

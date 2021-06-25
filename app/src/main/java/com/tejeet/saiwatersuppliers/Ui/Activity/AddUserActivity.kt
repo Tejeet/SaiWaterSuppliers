@@ -65,8 +65,10 @@ class AddUserActivity : AppCompatActivity() {
                         tankerRate.toString(),
                         "admin"
                     )
-                    val value = response
+
+                    val rr = response
                 }
+
 
             }
         }

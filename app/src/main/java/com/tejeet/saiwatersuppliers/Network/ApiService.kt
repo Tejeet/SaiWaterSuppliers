@@ -59,6 +59,7 @@ interface ApiService {
         @Query("customerMobile") customerMobile : String,
         @Query("customerAddress") customerAddress : String,
         @Query("tankerRate") tankerRate : String,
+        @Query("pass") pass : String,
         @Query("adminName") adminName : String
     ): Response<AddUserResponseDTO>
 

@@ -34,15 +34,12 @@ class MainViewModel @Inject constructor(
         customerAddress: String,
         tankerRate: String,
         adminName: String,
-    ): ResultData<Response<AddUserResponseDTO>?> {
+    ): Response<AddUserResponseDTO> {
 
          val response = CoroutineScope(Dispatchers.IO).async {
-             if (hasInternetConnection()){
-                 return@async ResultData.Success(mainRepository.addUser(societyName,customerName,
-                     customerEmail,customerMobile,customerAddress,tankerRate,adminName))
-             }else{
-                 return@async ResultData.Exception("No Internet Connection")
-             }
+                 return@async mainRepository.addUser(societyName,customerName,
+                     customerEmail,customerMobile,customerAddress,tankerRate,adminName)
+
          }
          return response.await()
 
