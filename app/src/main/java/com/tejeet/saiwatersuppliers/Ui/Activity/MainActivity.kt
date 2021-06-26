@@ -166,6 +166,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         builder.setMessage("Are sure wants to logout")
 
         builder.setPositiveButton("YES", DialogInterface.OnClickListener { dialog, id ->
+            AppPreferences.isLoggedIn = "NO"
             logout()
         })
 
@@ -179,7 +180,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     fun logout() {
-        AppPreferences.isLoggedIn = "NO"
+
         finish()
         System.exit(0)
         finishAffinity()

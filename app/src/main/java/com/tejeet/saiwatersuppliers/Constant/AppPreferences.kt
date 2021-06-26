@@ -78,6 +78,12 @@ object AppPreferences {
             it.putString(USER_EMAIL_KEY, value)
         }
 
+    var userMobile : String?
+        get() = preferences.getString(USER_MOBILE_KEY, "-")
+        set(value) = preferences.edit {
+            it.putString(USER_MOBILE_KEY, value)
+        }
+
     var userProfile : String?
         get() = preferences.getString(USER_PROFILE_URL_KEY, "-")
         set(value) = preferences.edit {
