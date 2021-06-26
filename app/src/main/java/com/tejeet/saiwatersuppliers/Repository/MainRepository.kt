@@ -12,18 +12,9 @@ class MainRepository @Inject constructor(
    private val apiService: ApiService
 ){
 
-   suspend fun addUser(
-      societyName:String,
-      customerName:String,
-      customerEmail:String,
-      customerMobile: String,
-      customerAddress: String,
-      tankerRate: String,
-      adminName: String,
-   ): Response<AddUserResponseDTO> {
+   suspend fun addUser( societyName:String,  customerName:String, customerEmail:String, customerMobile: String, customerAddress: String, tankerRate: String, password:String, adminName: String ): Response<AddUserResponseDTO> {
 
-      return  apiService.addUser("Ok",API_KEY,societyName,customerName,
-      customerEmail,customerMobile,customerAddress,tankerRate,"123456",adminName)
+      return  apiService.addUser("OK",API_KEY,societyName,customerName, customerEmail,customerMobile,customerAddress,tankerRate,password,adminName)
    }
 
    suspend fun getAllUser(userId:String,userEmail:String):MutableList<MyCustomer>{
@@ -41,6 +32,14 @@ class MainRepository @Inject constructor(
 
    suspend fun addDriver( driverName:String, driverEmail:String, driverMobile:String, driverPass:String): Response<AddDriverResponseDTO> {
       return  apiService.addDriver("Ok",API_KEY,driverName,driverEmail, driverMobile,driverPass,"Tejeet")
+   }
+
+   suspend fun userLogin( userId:String, userPass:String, firebaseToken:String, smartphone:String,smartphoneModel:String, apiLevel:String,androidversion:String): Response<LoginResponseDTO> {
+      return  apiService.userLogin("Ok",API_KEY,userId,userPass, firebaseToken, smartphone, smartphoneModel, apiLevel, androidversion)
+   }
+
+   suspend fun userFirebaseTokenUpdate( userEmail:String, userID:String, firebaseToken:String): Response<UserFBTokenUpdateResponseDTO> {
+      return  apiService.userFirebaseTokenUpdate("OK",API_KEY,userEmail,userID, firebaseToken)
    }
 
 

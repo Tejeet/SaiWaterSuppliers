@@ -57,6 +57,12 @@ class SocietiesActivity : AppCompatActivity(), SocietyItemClickListener {
                 }
         })
 
+        binding.floatingBtnAddSociety.setOnClickListener {
+            startActivity(Intent(this@SocietiesActivity, AddUserActivity::class.java))
+            overridePendingTransition(R.anim.enter_first, R.anim.enter_second)
+            finish()
+        }
+
 
     }
 
@@ -69,6 +75,8 @@ class SocietiesActivity : AppCompatActivity(), SocietyItemClickListener {
     }
 
     override fun onSocietyItemClicked(customer: MyCustomer) {
+
+
 
     }
 
