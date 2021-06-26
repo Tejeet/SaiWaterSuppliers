@@ -10,6 +10,8 @@ import androidx.lifecycle.asLiveData
 import com.tejeet.saiwatersuppliers.Constant.ConstantsData
 import com.tejeet.saiwatersuppliers.Constant.ResultData
 import com.tejeet.saiwatersuppliers.Data.ModelDTO.AddUserResponseDTO
+import com.tejeet.saiwatersuppliers.Data.ModelDTO.GetAllUserDTO
+import com.tejeet.saiwatersuppliers.Data.ModelDTO.MyCustomer
 import com.tejeet.saiwatersuppliers.Repository.MainRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -43,6 +45,22 @@ class MainViewModel @Inject constructor(
          }
          return response.await()
 
+
+    }
+
+    fun getAllUser(userId:String,userEmail:String): LiveData<ResultData<MutableList<MyCustomer>?>> {
+
+
+        return flow {
+            emit(ResultData.Loading())
+            if (hasInternetConnection()){
+                emit(ResultData.Success(mainRepository.getAllUser(userId,userEmail)))
+            }else{
+                emit(ResultData.Exception("NO Internet Connection"))
+            }
+
+
+        }.asLiveData(Dispatchers.IO)
 
     }
 

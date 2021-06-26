@@ -2,6 +2,8 @@ package com.tejeet.saiwatersuppliers.Repository
 
 import com.tejeet.saiwatersuppliers.Constant.ConstantsData.API_KEY
 import com.tejeet.saiwatersuppliers.Data.ModelDTO.AddUserResponseDTO
+import com.tejeet.saiwatersuppliers.Data.ModelDTO.GetAllUserDTO
+import com.tejeet.saiwatersuppliers.Data.ModelDTO.MyCustomer
 import com.tejeet.saiwatersuppliers.Network.ApiService
 import dagger.hilt.android.scopes.ActivityRetainedScoped
 import retrofit2.Response
@@ -24,6 +26,10 @@ class MainRepository @Inject constructor(
 
       return  apiService.addUser("Ok",API_KEY,societyName,customerName,
       customerEmail,customerMobile,customerAddress,tankerRate,"123456",adminName)
+   }
+
+   suspend fun getAllUser(userId:String,userEmail:String):MutableList<MyCustomer>{
+      return apiService.getAllUser("Ok", API_KEY,userId,userEmail).body()!!.myCustomers as MutableList<MyCustomer>
    }
 
 

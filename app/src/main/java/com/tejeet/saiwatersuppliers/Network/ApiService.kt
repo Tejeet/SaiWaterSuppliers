@@ -1,9 +1,6 @@
 package com.tejeet.saiwatersuppliers.Network
 
-import com.tejeet.saiwatersuppliers.Data.ModelDTO.AddDriverResponseDTO
-import com.tejeet.saiwatersuppliers.Data.ModelDTO.AddUserResponseDTO
-import com.tejeet.saiwatersuppliers.Data.ModelDTO.LoginResponseDTO
-import com.tejeet.saiwatersuppliers.Data.ModelDTO.getAllDriversDTO
+import com.tejeet.saiwatersuppliers.Data.ModelDTO.*
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -28,7 +25,7 @@ interface ApiService {
         @Query("androidversion") androidVersion : String
     ): Response<LoginResponseDTO>
 
-    @POST("api/appAdmin.php")
+    @POST("api/appAdmin.php?")
     suspend fun addDriver(
         @Query("addDriver") addDriver : String,
         @Query("trustedAppKey") trustedAppKey:String,
@@ -39,7 +36,7 @@ interface ApiService {
         @Query("adminName") adminName : String
     ): Response<AddDriverResponseDTO>
 
-    @GET("api/appAdmin.php")
+    @GET("api/appAdmin.php?")
     suspend fun getAllDrivers(
         @Query("getAllDrivers") getAllDriversResponse : String,
         @Query("trustedAppKey") trustedAppKey:String,
@@ -49,7 +46,7 @@ interface ApiService {
     ): Response<getAllDriversDTO>
 
 
-    @GET("api/appAdmin.php")
+    @GET("api/appAdmin.php?")
     suspend fun addUser(
         @Query("addCustomer") addCustomer : String,
         @Query("trustedAppKey") trustedAppKey:String,
@@ -63,5 +60,14 @@ interface ApiService {
         @Query("adminName") adminName : String
     ): Response<AddUserResponseDTO>
 
+    @GET("api/appAdmin.php?")
+    suspend fun getAllUser(
+        @Query("getAllCustomers") addCustomer : String,
+        @Query("trustedAppKey") trustedAppKey:String,
+        @Query("userid") societyName : String,
+        @Query("useremail") customerName: String
+    ): Response<GetAllUserDTO>
+
+    
 
 }
