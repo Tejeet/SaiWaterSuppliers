@@ -11,11 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SaiWaterSuppliers">
-        <activity android:name=".Ui.Activity.AddUserActivity"></activity>
+        <activity android:name=".Ui.Activity.AddUserActivity"/>
         <activity android:name=".Ui.Activity.SettingActivity" />
         <activity android:name=".Ui.Activity.DriversActivity" />
         <activity android:name=".Ui.Activity.SocietiesActivity" />
-        <activity android:name=".Ui.Activity.MainActivity">
+        <activity android:name=".Ui.Activity.MainActivity"/>
+        <activity android:name=".Login"/>
+        <activity android:name=".FirstScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
