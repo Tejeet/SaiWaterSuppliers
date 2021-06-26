@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/societyFragment"
+        android:icon="@drawable/ic_dashboard"
+        android:title="Societies" />
+    <item
+        android:id="@+id/driversFragment"
+        android:icon="@drawable/ic_dashboard"
+        android:title="Drivers" />
+    <item
+        android:id="@+id/usersFragment"
+        android:icon="@drawable/ic_dashboard"
+        android:title="Drivers" />
+    <item
+        android:id="@+id/settingFragment"
+        android:icon="@drawable/ic_dashboard"
+        android:title="Setting" />
+
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/ic_exitapp"
+        android:title="Log Out" />
+</menu>
