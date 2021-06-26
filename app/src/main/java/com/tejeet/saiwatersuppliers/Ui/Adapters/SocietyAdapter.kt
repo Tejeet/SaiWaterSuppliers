@@ -21,8 +21,9 @@ class SocietyAdapter(private var dataList:MutableList<MyCustomer>, private val i
     override fun onBindViewHolder(holder: SocietyViewHolder, position: Int) {
 
         holder.apply {
-            societyMobile.text = dataList[position].mobile
+
             societyName.text = dataList[position].societyname
+            customerName.text = "Chairman : ${dataList[position].customername}"
 
             constraintSociety.setOnClickListener {
                 itemClickListener.onSocietyItemClicked(dataList[position])
@@ -44,7 +45,7 @@ class SocietyAdapter(private var dataList:MutableList<MyCustomer>, private val i
     class SocietyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
 
          val societyName = itemView.findViewById<TextView>(R.id.societyName)
-         val societyMobile = itemView.findViewById<TextView>(R.id.societyMobile)
+         val customerName = itemView.findViewById<TextView>(R.id.customerName)
          val constraintSociety = itemView.findViewById<ConstraintLayout>(R.id.constraintSociety)
 
     }

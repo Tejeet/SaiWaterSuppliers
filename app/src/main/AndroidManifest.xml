@@ -2,22 +2,43 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tejeet.saiwatersuppliers">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
-        android:allowBackup="true"
         android:name=".MyApplication"
-        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.SaiWaterSuppliers">
-        <activity android:name=".Ui.Activity.AddUserActivity"/>
-        <activity android:name=".Ui.Activity.SettingActivity" />
-        <activity android:name=".Ui.Activity.DriversActivity" />
-        <activity android:name=".Ui.Activity.SocietiesActivity" />
-        <activity android:name=".Ui.Activity.MainActivity"/>
-        <activity android:name=".Login"/>
-        <activity android:name=".FirstScreen">
+        <activity
+            android:name=".Ui.Activity.AddDriverActivity"
+            android:label="Add Driver"/>
+        <activity android:name=".Ui.Activity.ManageDrivers"
+            android:label="Manger Drivers"/>
+        <activity android:name=".Ui.Activity.RevenueActivity" />
+        <activity android:name=".Ui.Activity.AddUserActivity" />
+        <activity
+            android:name=".Ui.Activity.SettingActivity"
+            android:label="Settings" />
+        <activity
+            android:name=".Ui.Activity.DriversActivity"
+            android:label="Drivers" />
+        <activity
+            android:name=".Ui.Activity.SocietiesActivity"
+            android:label="Societies" />
+        <activity
+            android:name=".Ui.Activity.MainActivity"
+            android:label="Home" />
+        <activity android:name=".Login" />
+        <activity android:name=".FirstScreen" />
+        <activity
+            android:name=".Ui.Activity.SplashScreen"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +46,5 @@
             </intent-filter>
         </activity>
     </application>
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

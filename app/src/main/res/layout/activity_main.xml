@@ -45,7 +45,6 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/header"
         >
-
     </com.google.android.material.navigation.NavigationView>
 
 

@@ -25,7 +25,7 @@ interface ApiService {
         @Query("androidversion") androidVersion : String
     ): Response<LoginResponseDTO>
 
-    @POST("api/appAdmin.php?")
+    @GET("api/appAdmin.php?")
     suspend fun addDriver(
         @Query("addDriver") addDriver : String,
         @Query("trustedAppKey") trustedAppKey:String,
@@ -67,6 +67,17 @@ interface ApiService {
         @Query("userid") societyName : String,
         @Query("useremail") customerName: String
     ): Response<GetAllUserDTO>
+
+
+    @GET("api/appAdmin.php?")
+    suspend fun getAllOrders(
+        @Query("getAllOrders") getallOrders : String,
+        @Query("trustedAppKey") trustedAppKey:String,
+        @Query("userid") societyName : String,
+        @Query("useremail") customerName: String
+    ): Response<GetAllOrdersResponseDTO>
+
+
 
     
 

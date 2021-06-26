@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "38586198621",
+    "project_id": "saiwatersuppliers-e010f",
+    "storage_bucket": "saiwatersuppliers-e010f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38586198621:android:5ced8eb671dfbea971fbb4",
+        "android_client_info": {
+          "package_name": "com.tejeet.saiwatersuppliers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38586198621-c3afls0j476veqafa7g1cphmra289gkt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDS24yweE_X6oOtJKTJXJkPXZZ75tZmcvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38586198621-c3afls0j476veqafa7g1cphmra289gkt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,20 +2,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/societyFragment"
+        android:id="@+id/homeFragment"
         android:icon="@drawable/ic_dashboard"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/societyFragment"
+        android:icon="@drawable/ic_building"
         android:title="Societies" />
     <item
         android:id="@+id/driversFragment"
-        android:icon="@drawable/ic_dashboard"
+        android:icon="@drawable/ic_driver"
         android:title="Drivers" />
     <item
-        android:id="@+id/usersFragment"
-        android:icon="@drawable/ic_dashboard"
-        android:title="Drivers" />
+        android:id="@+id/revenueFargment"
+        android:icon="@drawable/ic_order"
+        android:title="Revenue" />
     <item
         android:id="@+id/settingFragment"
-        android:icon="@drawable/ic_dashboard"
+        android:icon="@drawable/ic_settings"
         android:title="Setting" />
 
     <item

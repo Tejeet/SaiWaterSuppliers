@@ -4,35 +4,35 @@
     android:layout_width="match_parent"
     android:layout_height="190dp"
     android:orientation="vertical"
+    android:gravity="center"
     android:padding="20dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/userimg"
+        android:id="@+id/headUserImage"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:src="@drawable/driver_icon"
         />
 
     <TextView
         android:id="@+id/hUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:text="User Name"
+        android:text="Tejeet Magar"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/hUserEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="5dp"
-        android:text="User Email"
-        android:textColor="@color/white"
+        android:text="tejeetm@gmail.com"
+        android:textColor="@color/colorPrimaryDark"
         android:textStyle="italic" />
 
 </LinearLayout>

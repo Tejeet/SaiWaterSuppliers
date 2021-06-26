@@ -1,11 +1,14 @@
 package com.tejeet.saiwatersuppliers.Data.ModelDTO
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class TankerDriver(
     @SerializedName("address")
-    val address: Any,
+    val address: String,
     @SerializedName("email")
     val email: String,
     @SerializedName("id")
@@ -18,4 +21,4 @@ data class TankerDriver(
     val name: String,
     @SerializedName("pass")
     val pass: String
-)
+) : Parcelable
