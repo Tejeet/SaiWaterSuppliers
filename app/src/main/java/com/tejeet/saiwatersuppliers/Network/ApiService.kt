@@ -20,10 +20,20 @@ interface ApiService {
         @Query("userEmail") userEmail : String,
         @Query("userPass") userPass: String,
         @Query("firebasetoken") firebaseToken : String,
+        @Query("smartphone") smartphone : String,
         @Query("smartphoneModel") smartphoneModel : String,
         @Query("apilevel") apiLevel : String,
         @Query("androidversion") androidVersion : String
     ): Response<LoginResponseDTO>
+
+    @GET("api/appAdmin.php?")
+    suspend fun userFirebaseTokenUpdate(
+        @Query("userTokenUpdate") adminLogin : String,
+        @Query("trustedAppKey") trustedAppKey:String,
+        @Query("userEmail") userEmail : String,
+        @Query("userID") userPass: String,
+        @Query("firebasetoken") firebaseToken : String
+    ): Response<UserFBTokenUpdateResponseDTO>
 
     @GET("api/appAdmin.php?")
     suspend fun addDriver(
@@ -77,8 +87,5 @@ interface ApiService {
         @Query("useremail") customerName: String
     ): Response<GetAllOrdersResponseDTO>
 
-
-
-    
 
 }

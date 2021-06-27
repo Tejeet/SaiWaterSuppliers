@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.tejeet.beets.data.constant.AppPreferences
 import com.tejeet.saiwatersuppliers.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
@@ -21,6 +22,7 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
          _binding = FragmentProfileBinding.inflate(inflater, container, false)
 
+
         binding.btnToggle.setOnClickListener {
             if (toggleState){
                 binding.idSalesLayout.visibility = View.GONE
@@ -30,8 +32,23 @@ class ProfileFragment : Fragment() {
                 toggleState = true
             }
         }
+        AppPreferences.init(requireContext())
 
         return binding.root
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        init()
+
+    }
+
+    fun init(){
+        binding.idafUserName.text = AppPreferences.userName.toString()
+        binding.idafUserEmail.text = AppPreferences.userEmail.toString()
+        binding.idafuserMobile.text = AppPreferences.userMobile.toString()
     }
 
     override fun onDestroyView() {

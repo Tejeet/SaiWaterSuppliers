@@ -2,11 +2,14 @@ package com.tejeet.saiwatersuppliers.Ui.Activity
 
 import android.content.DialogInterface
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.GravityCompat
@@ -18,8 +21,12 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.tejeet.beets.data.constant.AppPreferences
 import com.tejeet.saiwatersuppliers.R
+import com.tejeet.saiwatersuppliers.Viewmodel.MainViewModel
 import com.tejeet.saiwatersuppliers.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
@@ -28,6 +35,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
     private val mToggle: ActionBarDrawerToggle? = null
+
+    private val TAG = "tag"
+
+    private val mainViewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,6 +70,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         loadProfile()
+        init()
 
 
     }
@@ -154,6 +166,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         builder.setMessage("Are sure wants to logout")
 
         builder.setPositiveButton("YES", DialogInterface.OnClickListener { dialog, id ->
+            AppPreferences.isLoggedIn = "NO"
             logout()
         })
 
@@ -167,9 +180,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     fun logout() {
+
         finish()
         System.exit(0)
         finishAffinity()
+
+    }
+
+    fun init(){
+
+        if (!AppPreferences.isTokenUpdated.equals("YES")){
+            CoroutineScope(Dispatchers.Main).launch {
+                val response = mainViewModel.userFBTokenUpdate(
+                    AppPreferences.userEmail.toString(),
+                    AppPreferences.userID.toString(),
+                    AppPreferences.userFirebaseToken.toString()
+                )
+
+                Log.d(TAG, "Firebase Token Update response : ${response.body()}")
+            }
+        }
 
     }
 

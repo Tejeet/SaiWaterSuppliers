@@ -33,16 +33,36 @@ class MainViewModel @Inject constructor(
         customerMobile: String,
         customerAddress: String,
         tankerRate: String,
+        password: String,
         adminName: String,
     ): Response<AddUserResponseDTO> {
 
          val response = CoroutineScope(Dispatchers.IO).async {
                  return@async mainRepository.addUser(societyName,customerName,
-                     customerEmail,customerMobile,customerAddress,tankerRate,adminName)
+                     customerEmail,customerMobile,customerAddress,tankerRate,password,adminName)
 
          }
          return response.await()
 
+
+    }
+
+    suspend fun userLogin(userId:String, userPass:String, firebaseToken:String, smartphone:String,smartphoneModel:String, apiLevel:String,androidversion:String): Response<LoginResponseDTO> {
+
+        val response = CoroutineScope(Dispatchers.IO).async {
+            return@async mainRepository.userLogin(userId,userPass, firebaseToken, smartphone, smartphoneModel, apiLevel, androidversion)
+        }
+        return response.await()
+
+    }
+
+
+    suspend fun userFBTokenUpdate(userEmail:String, userID:String, firebaseToken:String): Response<UserFBTokenUpdateResponseDTO> {
+
+        val response = CoroutineScope(Dispatchers.IO).async {
+            return@async mainRepository.userFirebaseTokenUpdate(userEmail,userID, firebaseToken)
+        }
+        return response.await()
 
     }
 

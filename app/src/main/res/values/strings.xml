@@ -1,7 +1,23 @@
 <resources>
-    <string name="app_name">SaiWaterSuppliers</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="app_name">Water Supply Admin</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+
+    <string-array name="month">
+        <item value="JAN">January</item>
+        <item value="FEB">February</item>
+        <item value="MAR">March</item>
+        <item value="APR">April</item>
+        <item value="MAY">May</item>
+        <item value="JUN">June</item>
+        <item value="JUL">July</item>
+        <item value="AUG">August</item>
+        <item value="SEPT">September</item>
+        <item value="OCT">October</item>
+        <item value="NOV">November</item>
+        <item value="DEC">December</item>
+    </string-array>
+
 </resources>

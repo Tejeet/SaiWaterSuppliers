@@ -43,11 +43,11 @@ object AppPreferences {
     }
 
 
-    fun setUser(displayName : String ,pName : String, pEmail : String, pProfileURL : String){
+    fun setUser(pName : String, pEmail : String, pPass : String,pProfileURL : String){
         val editor = preferences.edit()
-        editor.putString(USER_DISPLAY_NAME_KEY, displayName)
         editor.putString(USER_NAME_KEY,pName)
         editor.putString(USER_EMAIL_KEY,pEmail)
+        editor.putString(USER_PASSWORD_KEY,pPass)
         editor.putString(USER_PROFILE_URL_KEY,pProfileURL)
         editor.apply()
     }
@@ -76,6 +76,12 @@ object AppPreferences {
         get() = preferences.getString(USER_EMAIL_KEY, "-")
         set(value) = preferences.edit {
             it.putString(USER_EMAIL_KEY, value)
+        }
+
+    var userMobile : String?
+        get() = preferences.getString(USER_MOBILE_KEY, "-")
+        set(value) = preferences.edit {
+            it.putString(USER_MOBILE_KEY, value)
         }
 
     var userProfile : String?
