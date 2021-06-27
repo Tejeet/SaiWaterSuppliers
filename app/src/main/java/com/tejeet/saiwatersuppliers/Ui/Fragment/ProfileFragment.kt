@@ -9,6 +9,7 @@ import com.tejeet.saiwatersuppliers.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
 
+    var toggleState:Boolean= true
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
@@ -19,6 +20,16 @@ class ProfileFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
          _binding = FragmentProfileBinding.inflate(inflater, container, false)
+
+        binding.btnToggle.setOnClickListener {
+            if (toggleState){
+                binding.idSalesLayout.visibility = View.GONE
+                toggleState = false
+            }else{
+                binding.idSalesLayout.visibility = View.VISIBLE
+                toggleState = true
+            }
+        }
 
         return binding.root
     }
