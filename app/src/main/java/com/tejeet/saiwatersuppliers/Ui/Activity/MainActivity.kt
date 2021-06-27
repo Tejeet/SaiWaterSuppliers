@@ -138,7 +138,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.revenueFargment -> {
                 binding.drawer.closeDrawer(GravityCompat.START)
-                startActivity(Intent(this@MainActivity, AddUserActivity::class.java))
+                startActivity(Intent(this@MainActivity, RevenueActivity::class.java))
                 overridePendingTransition(R.anim.enter_first, R.anim.enter_second)
                 finish()
                 true

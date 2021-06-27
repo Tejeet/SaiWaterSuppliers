@@ -126,6 +126,38 @@ class MainViewModel @Inject constructor(
 
     }
 
+    fun getDetailedOrderReport(customerID:String,userId:String,userEmail:String): LiveData<ResultData<MutableList<AllDetailedOrder>?>> {
+
+
+        return flow {
+            emit(ResultData.Loading())
+            if (hasInternetConnection()){
+                emit(ResultData.Success(mainRepository.getDetailedOrderDetails(customerID,userId,userEmail)))
+            }else{
+                emit(ResultData.Exception("NO Internet Connection"))
+            }
+
+
+        }.asLiveData(Dispatchers.IO)
+
+    }
+
+    fun getAllRevenue(userId:String,userEmail:String): LiveData<ResultData<MutableList<RevenueDetail>?>> {
+
+
+        return flow {
+            emit(ResultData.Loading())
+            if (hasInternetConnection()){
+                emit(ResultData.Success(mainRepository.getAllRevenue(userId,userEmail)))
+            }else{
+                emit(ResultData.Exception("NO Internet Connection"))
+            }
+
+
+        }.asLiveData(Dispatchers.IO)
+
+    }
+
     fun hasInternetConnection():Boolean{
         val connectivityManager = getApplication<Application>().getSystemService(
             Context.CONNECTIVITY_SERVICE

@@ -1,5 +1,7 @@
 package com.tejeet.saiwatersuppliers.Ui.Adapters
 
+import android.graphics.Color
+import android.provider.CalendarContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +32,20 @@ class AllOrdersAdapter(
             societyName.text = dataList[position].societyName
             orderTime.text = "Order Time : ${dataList[position].ordertime}"
 
+            if (dataList[position].orderStatus.equals("0")){
+                orderStatus.text = "Placed"
+                orderStatus.setTextColor(Color.parseColor("#FF0000"))
+            }
+            else if (dataList[position].orderStatus.equals("1")){
+                orderStatus.text = "Dispatched"
+                orderStatus.setTextColor(Color.parseColor("#0000FF"))
+            }
+            else{
+                orderStatus.text = "Done"
+                orderStatus.setTextColor(Color.parseColor("#00FF00"))
+            }
+
+
             cvAllOrdersView.setOnClickListener {
                 itemClickListener.OnOrderCardViewClick(dataList[position])
 
@@ -51,6 +67,7 @@ class AllOrdersAdapter(
 
         val societyName = itemView.findViewById<TextView>(R.id.tvSocietyName)
         val orderTime = itemView.findViewById<TextView>(R.id.tvOrderTime)
+        val orderStatus = itemView.findViewById<TextView>(R.id.tv_order_status)
         val tvDeliveryTime = itemView.findViewById<TextView>(R.id.tvDeliveryTime)
         val cvAllOrdersView = itemView.findViewById<CardView>(R.id.cvAllOrdersItem)
 
