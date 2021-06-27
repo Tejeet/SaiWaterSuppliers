@@ -29,6 +29,14 @@ class MainRepository @Inject constructor(
       return apiService.getAllOrders("Ok", API_KEY,userId,userEmail).body()!!.AllOrders as MutableList<AllOrder>
    }
 
+   suspend fun getAllRevenue(userId:String,userEmail:String):MutableList<RevenueDetail>{
+      return apiService.getAllRevenue("Ok", API_KEY,userId,userEmail).body()!!.RevenueDetails as MutableList<RevenueDetail>
+   }
+
+   suspend fun getDetailedOrderDetails(customerID:String ,userId:String,userEmail:String):MutableList<AllDetailedOrder>{
+      return apiService.getDetailedOrderReport("Ok", API_KEY,customerID,userId,userEmail).body()!!.AllDetailedOrder as MutableList<AllDetailedOrder>
+   }
+
 
    suspend fun addDriver( driverName:String, driverEmail:String, driverMobile:String, driverPass:String): Response<AddDriverResponseDTO> {
       return  apiService.addDriver("Ok",API_KEY,driverName,driverEmail, driverMobile,driverPass,"Tejeet")

@@ -87,5 +87,22 @@ interface ApiService {
         @Query("useremail") customerName: String
     ): Response<GetAllOrdersResponseDTO>
 
+    @GET("api/appAdmin.php?")
+    suspend fun getAllRevenue(
+        @Query("getAllRevenue") getallOrders : String,
+        @Query("trustedAppKey") trustedAppKey:String,
+        @Query("userid") societyName : String,
+        @Query("useremail") customerName: String
+    ): Response<RevenueResponseDTO>
+
+    @GET("api/appAdmin.php?")
+    suspend fun getDetailedOrderReport(
+        @Query("getDetailedOrders") getallOrders : String,
+        @Query("trustedAppKey") trustedAppKey:String,
+        @Query("customerID") customerID:String,
+        @Query("userid") societyName : String,
+        @Query("useremail") customerName: String
+    ): Response<DetailedOrderDetailsDTO>
+
 
 }
