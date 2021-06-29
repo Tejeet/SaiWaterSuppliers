@@ -58,7 +58,8 @@ Delivery record
 
 
 
-<b>Future Scope:</b>
+<b>Future Scope:</b><br>
+
 Google maps
 Drivers side-amount earn
 Future prediction of water requirement based on past data
@@ -77,7 +78,8 @@ Hardware:
 Espressif WIFI Controller (Processor)
 Ultrasonic Distance Sensor (Distance measure)
 
-<b>Business Model:</b>
+<b>Business Model:</b><br>
+
 Target customer: Water Suppliers (Ecosystem)
 Revenue Model: Monthly  rental fees 
 
