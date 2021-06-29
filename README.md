@@ -1,8 +1,10 @@
 # SaiWaterSuppliers
-Sai Water Suppliers Admin Panel
+Sai Water Suppliers Admin Panel </br>
+Customers App - https://github.com/Manishsahu354/SaiWaterCustomer</br>
+Drivers App - https://github.com/harshkamaliya/SaiWaterDriver</br>
 
 
-Problem Statement
+<b>Problem Statement</b></br>
 Water management solution.
 
 We found that Water tanker supplier are not able to keep the track of their customer and driver manually and they are facing many issues such as
@@ -18,11 +20,10 @@ So we are here to solve this problem.
 We have Developed an ecosystem which provides hassle free service between the water providers and customers using Android app and IoT Device which will continuously monitor the water level inside the tank and with the help of smart algorithms automatic ordering of new tankers will be placed and we will also keep drivers in loop.
 
 
-We have develop 3 different app 
-Suppliers 
-Customers
-Drivers
-
+<b>We have develop 3 different app </b></br>
+Suppliers  </br>
+Customers - https://github.com/Manishsahu354/SaiWaterCustomer</br>
+Drivers - https://github.com/harshkamaliya/SaiWaterDriver</br>
 
 
 Flow of Ordering
@@ -33,7 +34,7 @@ Based on water level inside the tank, the user will get notification if water le
 
 
 
-Features:
+<b>Features:</b>
 
 Suppliers
 Billing
@@ -57,7 +58,7 @@ Delivery record
 
 
 
-Future Scope:
+<b>Future Scope:</b>
 Google maps
 Drivers side-amount earn
 Future prediction of water requirement based on past data
@@ -76,7 +77,7 @@ Hardware:
 Espressif WIFI Controller (Processor)
 Ultrasonic Distance Sensor (Distance measure)
 
-Business Model:
+<b>Business Model:</b>
 Target customer: Water Suppliers (Ecosystem)
 Revenue Model: Monthly  rental fees 
 
